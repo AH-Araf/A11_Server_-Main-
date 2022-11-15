@@ -19,7 +19,6 @@ async function run(){
     try{
         const serviceCollection = client.db('Assignment11').collection('service');
         const reviewCollection = client.db('Assignment11').collection('review');
-        
         //Services Part
         app.post('/services', async (req, res) => {
             const service = req.body;
@@ -38,7 +37,6 @@ async function run(){
             const serve = await cursor.toArray();
             res.send(serve);
         });
-
         app.get('/services/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
